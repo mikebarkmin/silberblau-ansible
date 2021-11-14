@@ -1,0 +1,24 @@
+- name: Parse Gnome Shell version
+  shell: gnome-shell --version | sed 's/[^0-9.]*\([0-9.]*\).*/\1/'
+  register: r_gnome_extension_parse_shell_version
+  changed_when: no
+
+- set_fact:
+    gnome_shell_version: "{{ r_gnome_extension_parse_shell_version.stdout }}"
+
+- name: Get Gnome Shell extension info
+  uri:
+    url: https://extensions.gnome.org/extension-info/?pk={{ item }}&shell_version={{ gnome_shell_version }}
+    return_content: yes
+  loop: "{{ gnome_extension_ids }}"
+  register: r_gnome_extension_info
+
+- include_tasks: install_extension.yml
+  vars:
+    gnome_extension_info: "{{ item.json }}"
+  loop: "{{ r_gnome_extension_info.results }}"
+
+- name: enable extensions
+  dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "['caffeine@patapon.info', 'bluetooth-quick-connect@bjarosze.gmail.com', 'audio-switcher@AndresCidoncha', 'appindicatorsupport@rgcjonas.gmail.com']"

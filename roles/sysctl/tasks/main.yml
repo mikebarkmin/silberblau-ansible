@@ -1,0 +1,11 @@
+- name: copy configs
+  become: yes
+  copy:
+    src: sysctl.d/
+    dest: /etc/sysctl.d/
+    backup: yes
+
+- name: reload
+  become: yes
+  command: >
+    sysctl --system

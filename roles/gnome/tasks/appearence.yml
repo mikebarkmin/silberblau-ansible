@@ -1,0 +1,28 @@
+- name: Create wallpapers folder
+  file:
+    path: "{{ dotfiles_user_home }}/Wallpapers/"
+    state: directory
+    mode: '0755'
+
+- name: Deploy wallpapers
+  copy:
+    src: "wallpaper.jpg"
+    dest: "{{ dotfiles_user_home }}/Wallpapers/wallpaper.jpg"
+
+- name: Set terminal profiles
+  shell: >
+    dconf load /org/gnome/terminal/legacy/profiles:/ < "{{ ansible_home }}/roles/gnome/files/gnome-terminal-profiles.dconf"
+
+- name: copy profile picture
+  become: true
+  copy:
+    src: mbarkmin.png
+    dest: /var/lib/AccountsService/icons/mbarkmin
+    force: true
+
+- name: set profile picture
+  become: true
+  lineinfile:
+    path: /var/lib/AccountsService/users/mbarkmin
+    regexp: '^Icon='
+    line: 'Icon=/var/lib/AccountsService/icons/mbarkmin'

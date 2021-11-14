@@ -1,0 +1,29 @@
+# vi:syntax=yaml
+location:
+    source_directories:
+        - "{{ dotfiles_user_home }}/.var"
+        - "{{ dotfiles_user_home }}/.local/share/keyrings"
+        - "{{ dotfiles_user_home }}/.mozilla"
+        - "{{ dotfiles_user_home }}/.gnupg"
+        - "{{ dotfiles_user_home }}/.ssh"
+    one_file_system: true
+    repositories:
+        - u256513@u256513.your-storagebox.de:backups/base
+    exclude_caches: true
+
+storage:
+    compression: auto,zstd
+    encryption_passphrase: "{{ backup_encryption_passphrase }}"
+    ssh_command: ssh -p 23
+    archive_name_format: '{hostname}-{now}'
+
+retention:
+    keep_daily: 7
+    prefix: '{hostname}-'
+
+consistency:
+    checks:
+        - repository
+        - archives
+    check_last: 3
+    prefix: '{hostname}-'

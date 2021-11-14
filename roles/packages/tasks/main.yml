@@ -1,0 +1,3 @@
+- name: Install system packages
+  shell:
+    cmd: "rpm-ostree install --apply-live --allow-inactive --idempotent {{ system_packages | join(' ') }}"

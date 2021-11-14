@@ -1,0 +1,113 @@
+- name: set custom-keybindings
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
+
+- name: set primary browser keybinding
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
+  with_items:
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name", value: "'browser'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding", value: "'<Super>b'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command", value: "'firefox'" }
+
+- name: set file manager keybinding
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
+  with_items:
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name", value: "'file manager'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding", value: "'<Super>n'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command", value: "'nautilus -w {{ dotfiles_user_home }}'" }
+
+- name: set terminal keybinding
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
+  with_items:
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name", value: "'terminal'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding", value: "'<Super>t'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command", value: "'gnome-terminal'" }
+
+- name: set ulauncher keybinding
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value}}"
+  with_items:
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name", value: "'ulauncher'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding", value: "'<Super>d'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command", value: "'ulauncher-toggle'" }
+
+- name: deactive switch to application
+  command:
+    gsettings set org.gnome.shell.keybindings {{ item }} "[]"
+  with_items:
+    - switch-to-application-5
+    - switch-to-application-6
+    - switch-to-application-7
+    - switch-to-application-8
+    - switch-to-application-9
+
+- name: set desktop wm keybindings
+  command:
+    gsettings set org.gnome.desktop.wm.keybindings {{ item.key }} "['{{ item.value }}']"
+  vars:
+    MOD_KEY: "<Super>"
+  with_items:
+    - key: move-to-workspace-left
+      value: "<Shift>{{ MOD_KEY }}h"
+    - key: move-to-workspace-right
+      value: "<Shift>{{ MOD_KEY }}l"
+    - key: move-to-workspace-up
+      value: "<Shift>{{ MOD_KEY }}k"
+    - key: move-to-workspace-down
+      value: "<Shift>{{ MOD_KEY }}j"
+    - key: move-to-workspace-1
+      value: "<Shift>{{ MOD_KEY }}1"
+    - key: move-to-workspace-2
+      value: "<Shift>{{ MOD_KEY }}2"
+    - key: move-to-workspace-3
+      value: "<Shift>{{ MOD_KEY }}3"
+    - key: move-to-workspace-4
+      value: "<Shift>{{ MOD_KEY }}4"
+    - key: move-to-workspace-5
+      value: "<Shift>{{ MOD_KEY }}5"
+    - key: move-to-workspace-6
+      value: "<Shift>{{ MOD_KEY }}6"
+    - key: move-to-workspace-7
+      value: "<Shift>{{ MOD_KEY }}7"
+    - key: move-to-workspace-8
+      value: "<Shift>{{ MOD_KEY }}8"
+    - key: move-to-workspace-9
+      value: "<Shift>{{ MOD_KEY }}9"
+    - key: switch-to-workspace-1
+      value: "{{ MOD_KEY }}1"
+    - key: switch-to-workspace-2
+      value: "{{ MOD_KEY }}2"
+    - key: switch-to-workspace-3
+      value: "{{ MOD_KEY }}3"
+    - key: switch-to-workspace-4
+      value: "{{ MOD_KEY }}4"
+    - key: switch-to-workspace-5
+      value: "{{ MOD_KEY }}5"
+    - key: switch-to-workspace-6
+      value: "{{ MOD_KEY }}6"
+    - key: switch-to-workspace-7
+      value: "{{ MOD_KEY }}7"
+    - key: switch-to-workspace-8
+      value: "{{ MOD_KEY }}8"
+    - key: switch-to-workspace-9
+      value: "{{ MOD_KEY }}9"
+    - key: toggle-fullscreen
+      value: "{{ MOD_KEY }}f"
+    - key: move-to-monitor-left
+      value: "{{ MOD_KEY }}h"
+    - key: move-to-monitor-right
+      value: "{{ MOD_KEY }}l"
+    - key: move-to-monitor-left
+      value: "{{ MOD_KEY }}h"
+
+- name: set screensaver keybing
+  command: >
+    gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Super><Esc>']"

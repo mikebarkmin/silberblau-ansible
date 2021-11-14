@@ -1,0 +1,32 @@
+- name: Install Borg and Borgmatic 
+  become: yes
+  package:
+    name:
+      - borgbackup
+      - borgmatic
+    state: present
+
+- name: Makes sure borgmatic directory exists
+  file: 
+    path: "{{dotfiles_user_home}}/.config/borgmatic"
+    recurse: yes
+    state: directory
+
+- name: Copy config template
+  template:
+    src: "config.yaml.j2"
+    dest: "{{ dotfiles_user_home }}/.config/borgmatic/config.yaml"
+    backup: yes
+
+- name: Init borg
+  command: >
+    borgmatic init --encryption repokey
+
+- name: Setup cron for backup
+  cron:
+    name: "backup"
+    user: "mbarkmin"
+    minute: "15"
+    hour: "21"
+    job: "borgmatic --syslog-verbosity 1"
+

@@ -1,0 +1,141 @@
+---
+dotfiles_user_home: "{{ '~' | expanduser }}"
+dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
+ansible_home: "{{ dotfiles_user_home }}/Sources/ansible"
+
+system_packages:
+  - ansible
+  - neovim
+  - zsh
+  - flatpak-builder
+  - git
+  - python3
+	- ripgrep
+
+git_repos:
+  - repo: git@github.com:openpatch/coru.git
+    dest: openpatch/coru
+  - repo: git@github.com:openpatch/code-runner.git
+    dest: openpatch/code-runner
+  - repo: git@github.com:openpatch/app.git
+    dest: openpatch/app
+  - repo: git@github.com:openpatch/bitflow.git
+    dest: openpatch/bitflow
+  - repo: git@github.com:openpatch/patches.git
+    dest: openpatch/patches
+  - repo: git@github.com:openpatch/patches-nextjs-starter.git
+    dest: openpatch/patches-nextjs-starter
+
+flatpaks:
+  - name: com.spotify.Client
+    state: present
+  - name: org.inkscape.Inkscape
+    state: present
+  - name: com.discordapp.Discord
+    state: present
+  - name: md.obsidian.Obsidian
+    state: present
+  - name: org.libreoffice.LibreOffice
+    state: present
+  - name: org.gimp.GIMP
+    state: present
+  - name: com.visualstudio.code
+    state: present
+  - name: org.gnome.Boxes
+    state: present
+  - name: com.belmoussaoui.Authenticator
+    state: present
+  - name: com.github.junrrein.PDFSlicer
+    state: present
+  - name: com.uploadedlobster.peek
+    state: present
+  - name: com.github.tchx84.Flatseal
+    state: present
+  - name: org.gaphor.Gaphor
+    state: present
+  - name: rest.insomnia.Insomnia
+    state: present
+  - name: org.audacityteam.Audacity
+    state: present
+
+gnome_extension_ids:
+  - 517 # Caffeine
+  - 1401 # Bluetooth Quick Connect
+  - 615 # Appindicator
+  - 1092 # Audio Switcher
+
+gnome_wallpaper_lock_screen: "wallpaper.jpg"
+
+gnome_wallpaper_desktop_screen: "wallpaper.jpg"
+
+gnome_settings:
+  - schema: "org.gnome.desktop.background"
+    key: "picture-uri"
+    value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_desktop_screen }}"
+  - schema: "org.gnome.desktop.screensaver"
+    key: "picture-uri"
+    value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_lock_screen }}"
+  - schema: "org.gnome.shell"
+    key: "disable-user-extensions"
+    value: "false"
+  - schema: "org.gnome.desktop.sound"
+    key: "event-sounds"
+    value: "false"
+  - schema: "org.gnome.desktop.calendar"
+    key: "show-weekdate"
+    value: "true"
+  - schema: "org.gnome.desktop.interface"
+    key: "clock-show-weekday"
+    value: "true"
+  - schema: "org.gnome.shell"
+    key: "favorite-apps"
+    value: "['firefox.desktop', 'org.gnome.Nautilus.desktop']"
+  - schema: "org.gnome.desktop.interface"
+    key: "enable-hot-corners"
+    value: "true"
+  - schema: "org.gnome.desktop.privacy"
+    key: "report-technical-problems"
+    value: "false"
+  - schema: "org.gnome.desktop.interface"
+    key: "gtk-theme"
+    value: "Adwaita"
+  - schema: "org.gnome.desktop.interface"
+    key: "icon-theme"
+    value: "Adwaita"
+  - schema: "org.gnome.desktop.wm.preferences"
+    key: "theme"
+    value: "Adwaita"
+  - schema: "org.gnome.desktop.interface"
+    key: "monospace-font-name"
+    value: "FiraCode NF Medium 11"
+  - schema: "org.gnome.desktop.interface"
+    key: "document-font-name"
+    value: "Ubuntu 11"
+  - schema: "org.gnome.desktop.interface"
+    key: "font-name"
+    value: "Ubuntu 11"
+  - schema: "org.gnome.mutter"
+    key: "workspaces-only-on-primary"
+    value: "true"
+  - schema: "org.gnome.desktop.interface"
+    key: "show-battery-percentage"
+    value: "true"
+  - schema: "org.gnome.desktop.input-sources"
+    key: "xkb-options"
+    value: "['caps:escape']"
+
+firefox_profiles:
+  default-release:
+    extensions:
+      - bitwarden-password-manager
+      - react-devtools
+      - ublock-origin
+      - languagetool
+      - i-dont-care-about-cookies
+      - duckduckgo-for-firefox
+    preferences:
+      signon.rememberSignons: false
+      privacy.donottrackheader.enabled: true
+      browser.uiCustomization.state: |
+        {"placements":{"widget-overflow-fixed-list":[],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","downloads-button","fxa-toolbar-menu-button","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action","jid1-zadieub7xozojw_jetpack-browser-action","languagetool-webextension_languagetool_org-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","_react-devtools-browser-action","ublock0_raymondhill_net-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["import-button","personal-bookmarks"]},"seen":["save-to-pocket-button","developer-button","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action","jid1-zadieub7xozojw_jetpack-browser-action","languagetool-webextension_languagetool_org-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","_react-devtools-browser-action","ublock0_raymondhill_net-browser-action"],"dirtyAreaCache":["nav-bar","PersonalToolbar","toolbar-menubar","TabsToolbar"],"currentVersion":17,"newElementCount":3}
+      browser.urlbar.placeholderName: "DuckDuckGo"

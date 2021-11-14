@@ -1,0 +1,4 @@
+__pycache__
+.vault_pass.txt
+facts.json
+*.pyc

@@ -1,0 +1,6 @@
+- include_tasks: appearence.yml
+- include_tasks: extensions.yml
+- include_tasks: keybindings.yml
+- include_tasks: nautilus.yml
+- include_tasks: settings.yml
+

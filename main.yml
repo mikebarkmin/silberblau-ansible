@@ -1,0 +1,15 @@
+- hosts: all
+  roles:
+    - sysctl
+    # - packages
+    - shell
+    - git
+    - fonts
+    - flatpak
+    - appimage
+    - gnome
+    #- backup
+    - dotfiles
+    - toolbox
+    - firefox
+    - staticdev.firefox

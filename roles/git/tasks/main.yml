@@ -1,0 +1,22 @@
+---
+- name: set git config global
+  ansible.builtin.git_config:
+    name: "{{ item.name }}"
+    scope: global
+    value: "{{ item.value }}"
+  with_items: "{{ git_global_configs }}"
+
+- name: make sure git repo paths exists
+  ansible.builtin.file:
+    path: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
+    state: directory
+    recurse: yes
+  with_items: "{{ git_repos }}"
+
+- name: clone git repos
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
+    clone: yes
+    update: no
+  with_items: "{{ git_repos }}"

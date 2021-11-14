@@ -1,0 +1,14 @@
+---
+dotfiles_context: personal
+
+git_global_configs:
+  - name: user.email
+    value: "mike@barkmin.eu"
+  - name: user.name
+    value: "Mike Barkmin"
+  - name: user.signingkey
+    value: B29BB3755EB40BF4
+      
+git_repos:
+  - repo: git@github.com:mikebarkmin/bycycling.git
+    dest: bycycling

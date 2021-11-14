@@ -1,0 +1,18 @@
+- name: Clone toolbox vscode repo
+  git:
+    repo: https://github.com/owtaylor/toolbox-vscode.git
+    dest: "{{ dotfiles_user_home }}/Sources/toolbox-vscode"
+    clone: yes
+    update: no
+   
+- name: Ensure local bin exists
+  file:
+    path: "{{ dotfiles_user_home }}/.local/bin"
+    recurse: yes
+    state: directory
+   
+- name: Set up symlink
+  file:
+    src: "{{ dotfiles_user_home }}/Sources/toolbox-vscode/code.sh"
+    dest: "{{ dotfiles_user_home }}/.local/bin/code"
+    state: link

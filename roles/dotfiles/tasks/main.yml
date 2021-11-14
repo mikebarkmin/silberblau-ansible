@@ -1,0 +1,14 @@
+- name: Cloning .dotfiles
+  ansible.builtin.git:
+    repo: 'git@github.com:mikebarkmin/.dotfiles.git'
+    dest: "{{ dotfiles_home }}"
+    recursive: yes
+    update: no
+    accept_hostkey: yes
+    version: main
+  
+- name: Stow dotfiles
+  shell: "cd $HOME/.dotfiles && ./install-{{ dotfiles_context }}"
+  
+- name: Install Vim-Plug
+  shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

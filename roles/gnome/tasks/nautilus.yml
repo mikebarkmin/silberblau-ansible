@@ -1,0 +1,29 @@
+- name: enable tree-view in nautilus
+  dconf:
+    key: "/org/gnome/nautilus/list-view/use-tree-view"
+    value: "true"
+
+- name: set list view in nautilus
+  dconf:
+    key: "/org/gnome/nautilus/preferences/default-folder-viewer"
+    value: "'list-view'"
+
+- name: configure single-click to open files
+  dconf:
+    key: "/org/gnome/nautilus/preferences/click-policy"
+    value: "'single'"
+
+- name: set executable text activation
+  dconf:
+    key: "/org/gnome/nautilus/preferences/executable-text-activation"
+    value: "'launch'"
+
+- name: enable option to permanently delete files
+  dconf:
+    key: "/org/gnome/nautilus/preferences/show-delete-permanently"
+    value: "'true'"
+
+- name: set directories to not be shown before files in nautilus
+  dconf:
+    key: "/org/gtk/settings/file-chooser/sort-directories-first"
+    value: "true"
