@@ -10,7 +10,7 @@ system_packages:
   - flatpak-builder
   - git
   - python3
-	- ripgrep
+  - ripgrep
 
 git_repos:
   - repo: git@github.com:openpatch/coru.git
@@ -114,7 +114,7 @@ gnome_settings:
   - schema: "org.gnome.desktop.interface"
     key: "font-name"
     value: "Ubuntu 11"
-	- schema: "org.gnome.desktop.wm.preferences"
+  - schema: "org.gnome.desktop.wm.preferences"
     key: "num-workspaces"
     value: "9"
   - schema: "org.gnome.mutter"
