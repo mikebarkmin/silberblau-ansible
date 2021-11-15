@@ -96,6 +96,12 @@ firefox_profiles:
     preferences:
       signon.rememberSignons: false
       privacy.donottrackheader.enabled: true
+      gnomeTheme.hideSingleTab: true
       browser.uiCustomization.state: |
-        {"placements":{"widget-overflow-fixed-list":[],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","downloads-button","fxa-toolbar-menu-button","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action","jid1-zadieub7xozojw_jetpack-browser-action","languagetool-webextension_languagetool_org-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","_react-devtools-browser-action","ublock0_raymondhill_net-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["import-button","personal-bookmarks"]},"seen":["developer-button","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action","jid1-zadieub7xozojw_jetpack-browser-action","languagetool-webextension_languagetool_org-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","_react-devtools-browser-action","ublock0_raymondhill_net-browser-action"],"dirtyAreaCache":["nav-bar","PersonalToolbar","toolbar-menubar","TabsToolbar"],"currentVersion":17,"newElementCount":3}
+        {"placements":{"widget-overflow-fixed-list":[],"nav-bar":["back-button","forward-button","new-tab-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","downloads-button","fxa-toolbar-menu-button","_react-devtools-browser-action","jid1-zadieub7xozojw_jetpack-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","languagetool-webextension_languagetool_org-browser-action","ublock0_raymondhill_net-browser-action","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","alltabs-button"],"PersonalToolbar":["personal-bookmarks"]},"seen":["save-to-pocket-button","_react-devtools-browser-action","jid1-zadieub7xozojw_jetpack-browser-action","jid1-kkzogwgsw3ao4q_jetpack-browser-action","languagetool-webextension_languagetool_org-browser-action","ublock0_raymondhill_net-browser-action","_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action","developer-button"],"dirtyAreaCache":["nav-bar","toolbar-menubar","TabsToolbar","PersonalToolbar"],"currentVersion":17,"newElementCount":4}
       browser.urlbar.placeholderName: "DuckDuckGo"
+      browser.startup.page: 3
+      browser.startup.homepage: "about:home"
+      browser.newtabpage.enabled: false
+      browser.newtabpage.activity-stream.feeds.topsites: false
+      browser.newtabpage.activity-stream.feeds.section.topstories: false

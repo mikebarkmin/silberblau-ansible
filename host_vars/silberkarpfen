@@ -30,6 +30,7 @@ flatpaks:
   - name: com.discordapp.Discord
   - name: com.github.junrrein.PDFSlicer
   - name: com.github.tchx84.Flatseal
+  - name: com.nextcloud.desktopclient.nextcloud
   - name: com.spotify.Client
   - name: com.uploadedlobster.peek
   - name: com.visualstudio.code
@@ -41,6 +42,8 @@ flatpaks:
   - name: org.gnome.Cheese
   - name: org.gnome.Connections
   - name: org.gnome.Contacts
+  - name: org.gnome.Epiphany
+  - name: org.gnome.Extensions
   - name: org.gnome.Evince
   - name: org.gnome.FileRoller
   - name: org.gnome.Screenshot
