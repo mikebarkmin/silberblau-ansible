@@ -8,6 +8,6 @@
 - name: add flatpaks
   flatpak:
     name: "{{ item.name }}"
-    state: "{{ item.state }}"
+    state: "{{ item.state | default('present') }}"
     remote: "{{ item.remote | default('flathub') }}"
   with_items: "{{ flatpaks }}"

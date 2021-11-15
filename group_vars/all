@@ -27,36 +27,30 @@ git_repos:
     dest: openpatch/patches-nextjs-starter
 
 flatpaks:
-  - name: com.spotify.Client
-    state: present
-  - name: org.inkscape.Inkscape
-    state: present
-  - name: com.discordapp.Discord
-    state: present
-  - name: md.obsidian.Obsidian
-    state: present
-  - name: org.libreoffice.LibreOffice
-    state: present
-  - name: org.gimp.GIMP
-    state: present
-  - name: com.visualstudio.code
-    state: present
-  - name: org.gnome.Boxes
-    state: present
   - name: com.belmoussaoui.Authenticator
-    state: present
+  - name: com.discordapp.Discord
   - name: com.github.junrrein.PDFSlicer
-    state: present
-  - name: com.uploadedlobster.peek
-    state: present
   - name: com.github.tchx84.Flatseal
-    state: present
-  - name: org.gaphor.Gaphor
-    state: present
-  - name: rest.insomnia.Insomnia
-    state: present
+  - name: com.spotify.Client
+  - name: com.uploadedlobster.peek
+  - name: com.visualstudio.code
+  - name: md.obsidian.Obsidian
   - name: org.audacityteam.Audacity
-    state: present
+  - name: org.gaphor.Gaphor
+  - name: org.gimp.GIMP
+  - name: org.gnome.Boxes
+  - name: org.gnome.Cheese
+  - name: org.gnome.Connections
+  - name: org.gnome.Contacts
+  - name: org.gnome.Evince
+  - name: org.gnome.FileRoller
+  - name: org.gnome.Screenshot
+  - name: org.gnome.SoundRecorder
+  - name: org.gnome.design.Contrast
+  - name: org.gnome.gedit
+  - name: org.inkscape.Inkscape
+  - name: org.libreoffice.LibreOffice
+  - name: rest.insomnia.Insomnia
 
 gnome_extension_ids:
   - 517 # Caffeine

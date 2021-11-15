@@ -1,0 +1,24 @@
+---
+dotfiles_context: work
+
+git_global_configs:
+  - name: user.email
+    value: "mike.barkmin@uni-due.de"
+  - name: user.name
+    value: "Mike Barkmin"
+  - name: user.signingkey
+    value: B29BB3755EB40BF4
+
+flatpaks:
+  - name: cc.arduino.arduinoide
+  - name: com.github.micahflee.torbrowser-launcher
+  - name: com.microsoft.Teams
+  - name: edu.mit.Scratch
+  - name: net.sonic_pi.SonicPi
+  - name: org.bluej.BlueJ
+  - name: org.gnome.Evolution
+  - name: org.greenfoot.Greenfoot
+  - name: org.processing.processingide
+  - name: org.thonny.Thonny
+  - name: org.zotero.Zotero
+  - name: us.zoom.Zoom

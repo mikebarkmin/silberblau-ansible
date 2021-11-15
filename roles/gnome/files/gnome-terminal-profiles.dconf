@@ -1,15 +1,6 @@
 [/]
-default='1d4b37e2-fb3e-4e2f-a301-eef4534a859d'
-list=['a279c4f2-067d-420b-937e-f56064c1472a', '1d4b37e2-fb3e-4e2f-a301-eef4534a859d']
-
-[:1d4b37e2-fb3e-4e2f-a301-eef4534a859d]
-background-transparency-percent=2
-bold-color-same-as-fg=true
-cursor-colors-set=true
-exit-action='hold'
-use-system-font=true
-use-transparent-background=true
-visible-name='System'
+default='a279c4f2-067d-420b-937e-f56064c1472a'
+list=['a279c4f2-067d-420b-937e-f56064c1472a']
 
 [:a279c4f2-067d-420b-937e-f56064c1472a]
 background-color='#2E3440'
