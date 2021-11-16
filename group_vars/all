@@ -2,6 +2,7 @@
 dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
 ansible_home: "{{ dotfiles_user_home }}/Sources/ansible"
+firefox_home:  "{{ dotfiles_user_home}}/.var/app/org.mozilla.firefox/.mozilla/firefox"
 
 gnome_wallpaper_lock_screen: "wallpaper.jpg"
 gnome_wallpaper_desktop_screen: "wallpaper.jpg"
@@ -18,7 +19,6 @@ base:
     - tmux
     - fzf
     - wl-clipboard
-    - mozilla-openh264
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -81,6 +81,7 @@ base:
     - name: org.gnome.gedit
     - name: org.inkscape.Inkscape
     - name: org.libreoffice.LibreOffice
+    - name: org.mozilla.firefox
     - name: rest.insomnia.Insomnia
 
   gnome_extension_ids:

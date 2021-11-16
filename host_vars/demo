@@ -1,0 +1,14 @@
+---
+dotfiles_context: demo
+
+git_global_configs: []
+
+git_repos: []
+
+system_packages: []
+
+flatpaks: []
+
+gnome_extension_ids: []
+
+gnome_settings: []
