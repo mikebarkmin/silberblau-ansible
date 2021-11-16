@@ -1,8 +1,11 @@
 # Getting Started
 
+Silberblau is my ansible playbook for managing my computers together with my
+[dotfiles repo](https://github.com/mikebarkmin/.dotfiles).
+
 ## Prerequisites
 
-* Fedora Silverblue
+* Fedora Silverblue 35 and up
 * `curl` or `wget` should be installed
 * `git` should be installed
 
@@ -14,8 +17,8 @@ or a similar tool.
 
 | Method | Command |
 |--------|---------|
-|curl|`sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikebarkmin/ansible/main/bin/install.sh)`|
-|wget|`sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikebarkmin/ansible/main/bin/install.sh)`|
+|curl|`sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikebarkmin/silberblau/main/bin/install.sh)`|
+|wget|`sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikebarkmin/silberblau/main/bin/install.sh)`|
 
 You can choose
 
@@ -26,7 +29,7 @@ know. You can do that by downloading the install script first, looking through
 it so everything looks normal, then running it:
 
 ```
-wget https://raw.githubusercontent.com/mikebarkmin/ansible/main/bin/install.sh
+wget https://raw.githubusercontent.com/mikebarkmin/silberblau/main/bin/install.sh
 sh install.sh
 ```
 
@@ -50,7 +53,7 @@ If you want to try the repo out, you can use the `demo` profile.
 
 ## Applying an Update
 
-If you have change something in `.dotfiles` or in `Sources/ansible` you can run
+If you have change something in `.dotfiles` or in `Sources/silberblau` you can run
 `dotr` and `ansr` to apply the updates. Everything from `.dotfiles` will be
 symlinks, so you only need to run `dotr` if you have created new files.
 

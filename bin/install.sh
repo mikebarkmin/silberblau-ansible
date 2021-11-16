@@ -8,7 +8,7 @@ if [[ "$PROFILE" != "work" && "$PROFILE" != "personal" && "PROFILE" != "demo" ]]
 fi
 
 pushd $HOME
-  rpm-ostree install --idempotent --allow-inactive --apply-live ansible neovim zsh flatpak-builder git python3 python3-psutil stow tmux fzf wl-clipboard ripgrep
+  rpm-ostree install --idempotent --allow-inactive --apply-live ansible neovim zsh flatpak-builder git python3 python3-psutil stow tmux fzf wl-clipboard ripgrep git-crypt
   rpm-ostree override remove firefox 2>/dev/null
   git clone git@github.com:mikebarkmin/.dotfiles.git
 
@@ -17,7 +17,7 @@ pushd $HOME
   popd
 
   mkdir -p $HOME/Sources
-  git clone git@github.com:mikebarkmin/ansible.git
+  git clone git@github.com:mikebarkmin/silberblau.git
 
   pushd ansible
     ansible-galaxy install -r requirements.yml

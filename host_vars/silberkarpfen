@@ -8,6 +8,10 @@ git_global_configs:
     value: "Mike Barkmin"
   - name: user.signingkey
     value: B29BB3755EB40BF4
+  - name: init.defaultBranch
+    value: main
+  - name: pull.rebase
+    value: true
 
 git_repos:
   - repo: git@github.com:mikebarkmin/bycycling.git
