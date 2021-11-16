@@ -19,18 +19,36 @@ base:
   git_repos:
     - repo: git@github.com:openpatch/coru.git
       dest: openpatch/coru
+      worktrees:
+        - main
     - repo: git@github.com:openpatch/code-runner.git
       dest: openpatch/code-runner
+      worktrees:
+        - main
     - repo: git@github.com:openpatch/app.git
       dest: openpatch/app
+      worktrees:
+        - main
     - repo: git@github.com:openpatch/bitflow.git
       dest: openpatch/bitflow
+      worktrees:
+        - main
     - repo: git@github.com:openpatch/patches.git
       dest: openpatch/patches
+      worktrees:
+        - main
     - repo: git@github.com:openpatch/patches-nextjs-starter.git
       dest: openpatch/patches-nextjs-starter
+      worktrees:
+        - main
     - repo: git@github.com:mikebarkmin/flathub.git
       dest: flathub
+      worktrees:
+        - master
+    - repo: git@github.com:mikebarkmin/fedora-toolbox.git
+      dest: fedora-toolbox
+      worktrees:
+        - main
 
   flatpaks:
     - name: com.belmoussaoui.Authenticator

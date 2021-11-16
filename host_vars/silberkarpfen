@@ -12,6 +12,8 @@ git_global_configs:
 git_repos:
   - repo: git@github.com:mikebarkmin/bycycling.git
     dest: bycycling
+    worktrees:
+      - main
 
 system_packages: []
 

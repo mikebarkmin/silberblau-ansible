@@ -22,5 +22,12 @@
     repo: "{{ item.repo }}"
     dest: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
     clone: yes
+    bare: yes
     update: no
+  with_items: "{{ all_git_repos }}"
+
+- name: create worktrees
+  shell:
+    chdir: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
+    cmd: "git worktree add {{ item.worktrees | join(' ') }}"
   with_items: "{{ all_git_repos }}"
