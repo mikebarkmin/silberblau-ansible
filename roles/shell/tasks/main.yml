@@ -9,3 +9,14 @@
 - name: Set zsh as default shell
   become: yes
   user: name=mbarkmin shell=/usr/bin/zsh
+
+- name: make sure tmux tpm paths exists
+  ansible.builtin.file:
+    path: "{{ dotfiles_user_home }}/.tmux/plugins/tpm"
+    state: directory
+    recurse: yes
+
+- name: Install tmux tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ dotfiles_user_home }}/.tmux/plugins/tpm"

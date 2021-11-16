@@ -10,6 +10,9 @@ Only a minial installation is needed for this script to work.
 - python3
 - python3-psutil
 - stow
+- tmux
+- fzf
+- wl-clipboard
 
 Create an inventory file at `$HOME/.config/ansible/inventory`
 

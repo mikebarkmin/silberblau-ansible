@@ -15,6 +15,9 @@ base:
     - git
     - python3
     - ripgrep
+    - tmux
+    - fzf
+    - wl-clipboard
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
