@@ -2,8 +2,8 @@ if [[ -z "$PROFILE" ]]; then
   PROFILE="personal"
 fi
 
-if [[ "$PROFILE" != "work" && "$PROFILE" != "personal" ]]; then
-  echo "PROFILE can only be 'work' or 'personal'"
+if [[ "$PROFILE" != "work" && "$PROFILE" != "personal" && "PROFILE" != "demo" ]]; then
+  echo "PROFILE can only be 'work', 'personal' or 'demo'"
   exit 1
 fi
 
