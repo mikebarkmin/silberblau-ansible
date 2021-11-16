@@ -18,6 +18,7 @@ base:
     - tmux
     - fzf
     - wl-clipboard
+    - mozilla-openh264
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -70,11 +71,12 @@ base:
     - name: org.gnome.Connections
     - name: org.gnome.Contacts
     - name: org.gnome.Epiphany
-    - name: org.gnome.Extensions
     - name: org.gnome.Evince
+    - name: org.gnome.Extensions
     - name: org.gnome.FileRoller
     - name: org.gnome.Screenshot
     - name: org.gnome.SoundRecorder
+    - name: org.gnome.World.PikaBackup
     - name: org.gnome.design.Contrast
     - name: org.gnome.gedit
     - name: org.inkscape.Inkscape
@@ -158,6 +160,7 @@ firefox_profiles:
       - languagetool
       - i-dont-care-about-cookies
       - duckduckgo-for-firefox
+      - darkreader
     preferences:
       signon.rememberSignons: false
       privacy.donottrackheader.enabled: true

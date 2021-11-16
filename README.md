@@ -13,6 +13,7 @@ Only a minial installation is needed for this script to work.
 - tmux
 - fzf
 - wl-clipboard
+- mozilla-openh264
 
 Create an inventory file at `$HOME/.config/ansible/inventory`
 
