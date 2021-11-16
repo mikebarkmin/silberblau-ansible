@@ -10,7 +10,9 @@ fi
 pushd $HOME
   rpm-ostree install --idempotent --allow-inactive --apply-live ansible neovim zsh flatpak-builder git python3 python3-psutil stow tmux fzf wl-clipboard ripgrep git-crypt
   rpm-ostree override remove firefox 2>/dev/null
-  git clone git@github.com:mikebarkmin/.dotfiles.git
+  git clone git@github.com:mikebarkmin/.dotfiles.git --recursive
+  git submodule foreach --recursive git checkout main
+  git submodule foreach 'test -d .git-crypt && git-crypt unlock || return 0'
 
   pushd .dotfiles
     ./install-$PROFILE
