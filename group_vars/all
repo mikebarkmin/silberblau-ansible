@@ -117,7 +117,7 @@ base:
       value: "false"
     - schema: "org.gnome.desktop.interface"
       key: "gtk-theme"
-      value: "Adwaita"
+      value: "Adwaita-dark"
     - schema: "org.gnome.desktop.interface"
       key: "icon-theme"
       value: "Adwaita"
