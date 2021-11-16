@@ -28,6 +28,9 @@
 
 - name: create worktrees
   shell:
-    chdir: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
-    cmd: "git worktree add {{ item.worktrees | join(' ') }}"
-  with_items: "{{ all_git_repos }}"
+    chdir: "{{ dotfiles_user_home }}/Sources/{{ item.0.dest }}"
+    cmd: "git worktree add {{ item.1 }} || true"
+  loop: "{{ all_git_repos|subelements('worktrees') }}"
+  loop_control:
+    label: "{{ item.0.dest }}"
+
