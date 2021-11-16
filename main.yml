@@ -1,11 +1,10 @@
 - hosts: all
   roles:
     - sysctl
-    # - packages
+    - packages
     - shell
     - git
     - fonts
-    - flatpak
     - appimage
     - gnome
     #- backup

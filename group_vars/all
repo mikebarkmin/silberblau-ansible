@@ -3,86 +3,130 @@ dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
 ansible_home: "{{ dotfiles_user_home }}/Sources/ansible"
 
-system_packages:
-  - ansible
-  - neovim
-  - zsh
-  - flatpak-builder
-  - git
-  - python3
-  - ripgrep
-
-gnome_extension_ids:
-  - 517 # Caffeine
-  - 1401 # Bluetooth Quick Connect
-  - 615 # Appindicator
-  - 1092 # Audio Switcher
-
 gnome_wallpaper_lock_screen: "wallpaper.jpg"
-
 gnome_wallpaper_desktop_screen: "wallpaper.jpg"
 
-gnome_settings:
-  - schema: "org.gnome.desktop.background"
-    key: "picture-uri"
-    value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_desktop_screen }}"
-  - schema: "org.gnome.desktop.screensaver"
-    key: "picture-uri"
-    value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_lock_screen }}"
-  - schema: "org.gnome.shell"
-    key: "disable-user-extensions"
-    value: "false"
-  - schema: "org.gnome.desktop.sound"
-    key: "event-sounds"
-    value: "false"
-  - schema: "org.gnome.desktop.calendar"
-    key: "show-weekdate"
-    value: "true"
-  - schema: "org.gnome.desktop.interface"
-    key: "clock-show-weekday"
-    value: "true"
-  - schema: "org.gnome.shell"
-    key: "favorite-apps"
-    value: "['firefox.desktop', 'org.gnome.Nautilus.desktop']"
-  - schema: "org.gnome.desktop.interface"
-    key: "enable-hot-corners"
-    value: "true"
-  - schema: "org.gnome.desktop.privacy"
-    key: "report-technical-problems"
-    value: "false"
-  - schema: "org.gnome.desktop.interface"
-    key: "gtk-theme"
-    value: "Adwaita"
-  - schema: "org.gnome.desktop.interface"
-    key: "icon-theme"
-    value: "Adwaita"
-  - schema: "org.gnome.desktop.wm.preferences"
-    key: "theme"
-    value: "Adwaita"
-  - schema: "org.gnome.desktop.interface"
-    key: "monospace-font-name"
-    value: "FiraCode NF Medium 11"
-  - schema: "org.gnome.desktop.interface"
-    key: "document-font-name"
-    value: "Ubuntu 11"
-  - schema: "org.gnome.desktop.interface"
-    key: "font-name"
-    value: "Ubuntu 11"
-  - schema: "org.gnome.desktop.wm.preferences"
-    key: "num-workspaces"
-    value: "9"
-  - schema: "org.gnome.mutter"
-    key: "dynamic-workspaces"
-    value: "false"
-  - schema: "org.gnome.mutter"
-    key: "workspaces-only-on-primary"
-    value: "true"
-  - schema: "org.gnome.desktop.interface"
-    key: "show-battery-percentage"
-    value: "true"
-  - schema: "org.gnome.desktop.input-sources"
-    key: "xkb-options"
-    value: "['caps:escape']"
+base:
+  system_packages:
+    - ansible
+    - neovim
+    - zsh
+    - flatpak-builder
+    - git
+    - python3
+    - ripgrep
+
+  git_repos:
+    - repo: git@github.com:openpatch/coru.git
+      dest: openpatch/coru
+    - repo: git@github.com:openpatch/code-runner.git
+      dest: openpatch/code-runner
+    - repo: git@github.com:openpatch/app.git
+      dest: openpatch/app
+    - repo: git@github.com:openpatch/bitflow.git
+      dest: openpatch/bitflow
+    - repo: git@github.com:openpatch/patches.git
+      dest: openpatch/patches
+    - repo: git@github.com:openpatch/patches-nextjs-starter.git
+      dest: openpatch/patches-nextjs-starter
+    - repo: git@github.com:mikebarkmin/flathub.git
+      dest: flathub
+
+  flatpaks:
+    - name: com.belmoussaoui.Authenticator
+    - name: com.discordapp.Discord
+    - name: com.github.junrrein.PDFSlicer
+    - name: com.github.tchx84.Flatseal
+    - name: com.spotify.Client
+    - name: com.uploadedlobster.peek
+    - name: com.visualstudio.code
+    - name: md.obsidian.Obsidian
+    - name: org.audacityteam.Audacity
+    - name: org.gaphor.Gaphor
+    - name: org.gimp.GIMP
+    - name: org.gnome.Boxes
+    - name: org.gnome.Cheese
+    - name: org.gnome.Connections
+    - name: org.gnome.Contacts
+    - name: org.gnome.Epiphany
+    - name: org.gnome.Extensions
+    - name: org.gnome.Evince
+    - name: org.gnome.FileRoller
+    - name: org.gnome.Screenshot
+    - name: org.gnome.SoundRecorder
+    - name: org.gnome.design.Contrast
+    - name: org.gnome.gedit
+    - name: org.inkscape.Inkscape
+    - name: org.libreoffice.LibreOffice
+    - name: rest.insomnia.Insomnia
+
+  gnome_extension_ids:
+    - 517 # Caffeine
+    - 1401 # Bluetooth Quick Connect
+    - 615 # Appindicator
+    - 1092 # Audio Switcher
+
+  gnome_settings:
+    - schema: "org.gnome.desktop.background"
+      key: "picture-uri"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_desktop_screen }}"
+    - schema: "org.gnome.desktop.screensaver"
+      key: "picture-uri"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_lock_screen }}"
+    - schema: "org.gnome.shell"
+      key: "disable-user-extensions"
+      value: "false"
+    - schema: "org.gnome.desktop.sound"
+      key: "event-sounds"
+      value: "false"
+    - schema: "org.gnome.desktop.calendar"
+      key: "show-weekdate"
+      value: "true"
+    - schema: "org.gnome.desktop.interface"
+      key: "clock-show-weekday"
+      value: "true"
+    - schema: "org.gnome.shell"
+      key: "favorite-apps"
+      value: "['firefox.desktop', 'org.gnome.Nautilus.desktop']"
+    - schema: "org.gnome.desktop.interface"
+      key: "enable-hot-corners"
+      value: "true"
+    - schema: "org.gnome.desktop.privacy"
+      key: "report-technical-problems"
+      value: "false"
+    - schema: "org.gnome.desktop.interface"
+      key: "gtk-theme"
+      value: "Adwaita"
+    - schema: "org.gnome.desktop.interface"
+      key: "icon-theme"
+      value: "Adwaita"
+    - schema: "org.gnome.desktop.wm.preferences"
+      key: "theme"
+      value: "Adwaita"
+    - schema: "org.gnome.desktop.interface"
+      key: "monospace-font-name"
+      value: "FiraCode NF Medium 11"
+    - schema: "org.gnome.desktop.interface"
+      key: "document-font-name"
+      value: "Ubuntu 11"
+    - schema: "org.gnome.desktop.interface"
+      key: "font-name"
+      value: "Ubuntu 11"
+    - schema: "org.gnome.desktop.wm.preferences"
+      key: "num-workspaces"
+      value: "9"
+    - schema: "org.gnome.mutter"
+      key: "dynamic-workspaces"
+      value: "false"
+    - schema: "org.gnome.mutter"
+      key: "workspaces-only-on-primary"
+      value: "true"
+    - schema: "org.gnome.desktop.interface"
+      key: "show-battery-percentage"
+      value: "true"
+    - schema: "org.gnome.desktop.input-sources"
+      key: "xkb-options"
+      value: "['caps:escape']"
 
 firefox_profiles:
   default-release:

@@ -1,4 +1,8 @@
+- name: set all_gnome_settings
+  set_fact:
+    all_gnome_settings: "{{ gnome_settings + base['gnome_settings'] }}"
+
 - name: Apply gnome settings
   command: >
     gsettings set {{ item.schema }} {{ item.key }} "{{ item.value }}"
-  with_items: "{{ gnome_settings }}"
+  with_items: "{{ all_gnome_settings }}"

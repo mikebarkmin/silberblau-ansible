@@ -1,4 +1,8 @@
 ---
+- name: set all_git_repos
+  set_fact:
+    all_git_repos: "{{ git_repos + base['git_repos'] }}"
+
 - name: set git config global
   ansible.builtin.git_config:
     name: "{{ item.name }}"
@@ -11,7 +15,7 @@
     path: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
     state: directory
     recurse: yes
-  with_items: "{{ git_repos }}"
+  with_items: "{{ all_git_repos }}"
 
 - name: clone git repos
   ansible.builtin.git:
@@ -19,4 +23,4 @@
     dest: "{{ dotfiles_user_home }}/Sources/{{ item.dest }}"
     clone: yes
     update: no
-  with_items: "{{ git_repos }}"
+  with_items: "{{ all_git_repos }}"

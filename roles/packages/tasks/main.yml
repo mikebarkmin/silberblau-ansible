@@ -1,3 +1,25 @@
-- name: Install system packages
-  shell:
-    cmd: "rpm-ostree install --apply-live --allow-inactive --idempotent {{ system_packages | join(' ') }}"
+# - name: set all_system_packages
+#   set_fact:
+#     all_system_packages: "{{ system_packages + base['system_packages'] }}"
+#
+# - name: Install system packages
+#   shell:
+#     cmd: "rpm-ostree install --apply-live --allow-inactive --idempotent {{ all_system_packages | join(' ') }}"
+
+- name: set all_flatpak
+  set_fact:
+    all_flatpaks: "{{ flatpaks + base['flatpaks'] }}"
+
+- name: add the flathub flatpak repository remote to the user installation
+  become: yes
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: add flatpaks
+  flatpak:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    remote: "{{ item.remote | default('flathub') }}"
+  with_items: "{{ all_flatpaks }}"

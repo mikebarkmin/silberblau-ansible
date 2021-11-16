@@ -9,19 +9,9 @@ git_global_configs:
   - name: user.signingkey
     value: B29BB3755EB40BF4
 
-git_repos:
-  - repo: git@github.com:openpatch/coru.git
-    dest: openpatch/coru
-  - repo: git@github.com:openpatch/code-runner.git
-    dest: openpatch/code-runner
-  - repo: git@github.com:openpatch/app.git
-    dest: openpatch/app
-  - repo: git@github.com:openpatch/bitflow.git
-    dest: openpatch/bitflow
-  - repo: git@github.com:openpatch/patches.git
-    dest: openpatch/patches
-  - repo: git@github.com:openpatch/patches-nextjs-starter.git
-    dest: openpatch/patches-nextjs-starter
+git_repos: []
+
+system_packages: []
 
 flatpaks:
   - name: cc.arduino.arduinoide
@@ -36,29 +26,7 @@ flatpaks:
   - name: org.thonny.Thonny
   - name: org.zotero.Zotero
   - name: us.zoom.Zoom
-  - name: com.belmoussaoui.Authenticator
-  - name: com.discordapp.Discord
-  - name: com.github.junrrein.PDFSlicer
-  - name: com.github.tchx84.Flatseal
-  - name: com.spotify.Client
-  - name: com.uploadedlobster.peek
-  - name: com.visualstudio.code
-  - name: md.obsidian.Obsidian
-  - name: org.audacityteam.Audacity
-  - name: org.gaphor.Gaphor
-  - name: org.gimp.GIMP
-  - name: org.gnome.Boxes
-  - name: org.gnome.Cheese
-  - name: org.gnome.Connections
-  - name: org.gnome.Contacts
-  - name: org.gnome.Epiphany
-  - name: org.gnome.Extensions
-  - name: org.gnome.Evince
-  - name: org.gnome.FileRoller
-  - name: org.gnome.Screenshot
-  - name: org.gnome.SoundRecorder
-  - name: org.gnome.design.Contrast
-  - name: org.gnome.gedit
-  - name: org.inkscape.Inkscape
-  - name: org.libreoffice.LibreOffice
-  - name: rest.insomnia.Insomnia
+
+gnome_extension_ids: []
+
+gnome_settings: []
