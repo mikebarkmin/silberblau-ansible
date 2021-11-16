@@ -7,6 +7,8 @@ git_repos: []
 
 system_packages: []
 
+system_flatpaks: []
+
 flatpaks: []
 
 gnome_extension_ids: []

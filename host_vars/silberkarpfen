@@ -21,6 +21,8 @@ git_repos:
 
 system_packages: []
 
+system_flatpaks: []
+
 flatpaks:
   - name: com.nextcloud.desktopclient.nextcloud
 

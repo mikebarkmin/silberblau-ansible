@@ -17,6 +17,8 @@ git_repos: []
 
 system_packages: []
 
+system_flatpaks: []
+
 flatpaks:
   - name: cc.arduino.arduinoide
   - name: com.github.micahflee.torbrowser-launcher

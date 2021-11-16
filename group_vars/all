@@ -1,7 +1,7 @@
 ---
 dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
-ansible_home: "{{ dotfiles_user_home }}/Sources/ansible"
+ansible_home: "{{ dotfiles_user_home }}/Sources/silberblau"
 firefox_home:  "{{ dotfiles_user_home}}/.var/app/org.mozilla.firefox/.mozilla/firefox"
 
 gnome_wallpaper_lock_screen: "wallpaper.jpg"
@@ -53,6 +53,9 @@ base:
       dest: fedora-toolbox
       worktrees:
         - main
+
+  system_flatpaks:
+    - name: org.gtk.Gtk3theme.Adwaita-dark
 
   flatpaks:
     - name: com.belmoussaoui.Authenticator
@@ -111,7 +114,7 @@ base:
       value: "true"
     - schema: "org.gnome.shell"
       key: "favorite-apps"
-      value: "['firefox.desktop', 'org.gnome.Nautilus.desktop']"
+      value: "['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop']"
     - schema: "org.gnome.desktop.interface"
       key: "enable-hot-corners"
       value: "true"
