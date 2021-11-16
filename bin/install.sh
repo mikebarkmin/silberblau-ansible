@@ -1,8 +1,8 @@
-if [[ -z $PROFILE ]]; then
+if [[ -z "$PROFILE" ]]; then
   PROFILE="personal"
 fi
 
-if [[ $PROFILE != "work" && $PROFILE != "personal" ]]; then
+if [[ "$PROFILE" != "work" && "$PROFILE" != "personal" ]]; then
   echo "PROFILE can only be 'work' or 'personal'"
   exit 1
 fi
