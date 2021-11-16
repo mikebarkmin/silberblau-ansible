@@ -1,5 +1,5 @@
 if [[ -z $PROFILE ]]; then
-  PROIFLE=personal
+  PROFILE="personal"
 fi
 
 if [[ $PROFILE != "work" && $PROFILE != "personal" ]]; then
