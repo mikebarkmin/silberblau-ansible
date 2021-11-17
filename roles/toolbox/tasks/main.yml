@@ -16,3 +16,4 @@
     src: "{{ dotfiles_user_home }}/Sources/toolbox-vscode/code.sh"
     dest: "{{ dotfiles_user_home }}/.local/bin2/code"
     state: link
+
