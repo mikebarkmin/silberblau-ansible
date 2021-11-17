@@ -4,15 +4,15 @@
     dest: "{{ dotfiles_user_home }}/Sources/toolbox-vscode"
     clone: yes
     update: no
-   
+
 - name: Ensure local bin exists
   file:
-    path: "{{ dotfiles_user_home }}/.local/bin"
+    path: "{{ dotfiles_user_home }}/.local/bin2"
     recurse: yes
     state: directory
-   
+
 - name: Set up symlink
   file:
     src: "{{ dotfiles_user_home }}/Sources/toolbox-vscode/code.sh"
-    dest: "{{ dotfiles_user_home }}/.local/bin/code"
+    dest: "{{ dotfiles_user_home }}/.local/bin2/code"
     state: link
