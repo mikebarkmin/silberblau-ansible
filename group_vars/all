@@ -1,4 +1,5 @@
 ---
+user: "mbarkmin"
 dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
 ansible_home: "{{ dotfiles_user_home }}/Sources/silberblau"
@@ -65,6 +66,7 @@ base:
     - name: com.spotify.Client
     - name: com.uploadedlobster.peek
     - name: com.visualstudio.code
+    - name: io.dbeaver.DBeaverCommunity
     - name: md.obsidian.Obsidian
     - name: org.audacityteam.Audacity
     - name: org.gaphor.Gaphor

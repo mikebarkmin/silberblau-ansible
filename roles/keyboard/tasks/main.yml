@@ -1,0 +1,37 @@
+- name: Add user to uinput group
+  become: yes
+  group:
+    name: uinput
+    state: present
+
+- name: Add user to uinput group
+  become: yes
+  user:
+    name: "{{ user }}"
+    group: uinput
+    append: yes
+
+- name: Download kmonad
+  become: yes
+  get_url:
+    url: https://github.com/kmonad/kmonad/releases/download/0.4.1/kmonad-0.4.1-linux
+    dest: /usr/bin/kmonad
+    mode: 0755
+
+- name: Install kmonad systemd
+  copy:
+    src: files/kmonad.service
+    dest: /etc/systemd/system/kmonad.service
+
+- name: Start kmonad systemd
+  systemd:
+    daemon_reload: yes
+    name: kmonad.service
+    enabled: yes
+    state: started
+
+- name: Setup qmk
+  command: >
+    "tbr qmk setup -H {{ dotfiles_user_home }}/Sources/qmk_firmware -y mikebarkmin/qmk_firmware"
+  args:
+    creates: "{{ dotfiles_user_home }}/Sources/qmk_firmware"
