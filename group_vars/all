@@ -86,6 +86,7 @@ base:
     - name: org.gnome.gedit
     - name: org.inkscape.Inkscape
     - name: org.libreoffice.LibreOffice
+    - name: org.mozilla.Thunderbird
     - name: org.mozilla.firefox
     - name: rest.insomnia.Insomnia
 
@@ -94,6 +95,7 @@ base:
     - 1401 # Bluetooth Quick Connect
     - 615 # Appindicator
     - 1092 # Audio Switcher
+    - 1162 # emoji picker
 
   gnome_settings:
     - schema: "org.gnome.desktop.background"

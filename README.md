@@ -33,6 +33,15 @@ wget https://raw.githubusercontent.com/mikebarkmin/silberblau/main/bin/install.s
 sh install.sh
 ```
 
+### Run only on role
+
+You can run only run a specific role if you desire. This is extremely
+useful, when for example adding a single git repo.
+
+```
+ansible-playbook main.yml --ask-become --tags=git
+```
+
 ## Profiles
 
 There are two profiles which can be chosen.
