@@ -1,25 +1,7 @@
 - name: set custom-keybindings
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
-    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
-
-- name: set primary browser keybinding
-  dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value}}"
-  with_items:
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name", value: "'browser'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding", value: "'<Super>b'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command", value: "'firefox'" }
-
-- name: set file manager keybinding
-  dconf:
-    key: "{{ item.key }}"
-    value: "{{ item.value}}"
-  with_items:
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name", value: "'file manager'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding", value: "'<Super>n'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command", value: "'nautilus -w {{ dotfiles_user_home }}'" }
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
 
 - name: set terminal keybinding
   dconf:
@@ -27,8 +9,8 @@
     value: "{{ item.value}}"
   with_items:
     - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name", value: "'terminal'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding", value: "'<Super>t'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command", value: "'gnome-terminal'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding", value: "'<Super>Return'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command", value: "'alacritty'" }
 
 - name: set ulauncher keybinding
   dconf:
@@ -105,12 +87,24 @@
       value: "{{ MOD_KEY }}9"
     - key: toggle-fullscreen
       value: "{{ MOD_KEY }}f"
-    - key: move-to-monitor-left
-      value: "{{ MOD_KEY }}h"
-    - key: move-to-monitor-right
+    - key: move-to-side-w
+      value: "<Shift>{{ MOD_KEY }}h"
+    - key: move-to-side-e
+      value: "<Shift>{{ MOD_KEY }}l"
+    - key: move-to-side-n
+      value: "<Shift>{{ MOD_KEY }}k"
+    - key: move-to-side-s
+      value: "<Shift>{{ MOD_KEY }}j"
+    - key: begin-resize
+      value: "{{ MOD_KEY }}r"
+    - key: switch-applications
       value: "{{ MOD_KEY }}l"
-    - key: move-to-monitor-left
+    - key: switch-applications-backward
       value: "{{ MOD_KEY }}h"
+    - key: switch-group
+      value: "{{ MOD_KEY }}k"
+    - key: switch-group-backward
+      value: "{{ MOD_KEY }}j"
 
 - name: set screensaver keybing
   command: >

@@ -25,4 +25,4 @@
 - name: enable extensions
   dconf:
     key: "/org/gnome/shell/enabled-extensions"
-    value: "['caffeine@patapon.info', 'bluetooth-quick-connect@bjarosze.gmail.com', 'audio-switcher@AndresCidoncha', 'appindicatorsupport@rgcjonas.gmail.com']"
+    value: "['caffeine@patapon.info', 'bluetooth-quick-connect@bjarosze.gmail.com', 'audio-switcher@AndresCidoncha', 'appindicatorsupport@rgcjonas.gmail.com', 'emoji-selector@maestroschan.fr']"

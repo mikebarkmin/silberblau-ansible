@@ -20,6 +20,14 @@ base:
     - tmux
     - fzf
     - wl-clipboard
+    - light
+    - sway
+    - swaylock
+    - waybar
+    - mako # notifications
+    - ulauncher
+    - kanshi # display config
+    - lxpolkit
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -69,6 +77,7 @@ base:
     - name: io.dbeaver.DBeaverCommunity
     - name: md.obsidian.Obsidian
     - name: org.audacityteam.Audacity
+    - name: org.flameshot.Flameshot
     - name: org.gaphor.Gaphor
     - name: org.gimp.GIMP
     - name: org.gnome.Boxes
