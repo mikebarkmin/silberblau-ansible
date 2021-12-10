@@ -1,3 +1,10 @@
+- name: reset keybindings
+  command: "gsettings reset-recursively {{ item }}"
+  with_items:
+    - org.gnome.shell.keybindings
+    - org.gnome.desktop.wm.keybindings
+    - org.gnome.mutter.keybindings
+
 - name: set custom-keybindings
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
@@ -87,14 +94,6 @@
       value: "{{ MOD_KEY }}9"
     - key: toggle-fullscreen
       value: "{{ MOD_KEY }}f"
-    - key: move-to-side-w
-      value: "<Shift>{{ MOD_KEY }}h"
-    - key: move-to-side-e
-      value: "<Shift>{{ MOD_KEY }}l"
-    - key: move-to-side-n
-      value: "<Shift>{{ MOD_KEY }}k"
-    - key: move-to-side-s
-      value: "<Shift>{{ MOD_KEY }}j"
     - key: begin-resize
       value: "{{ MOD_KEY }}r"
     - key: switch-applications
@@ -105,6 +104,19 @@
       value: "{{ MOD_KEY }}k"
     - key: switch-group-backward
       value: "{{ MOD_KEY }}j"
+    - key: close
+      value: "<Shift>{{ MOD_KEY }}q"
+
+- name: set mutter keybindings
+  command:
+    gsettings set org.gnome.mutter.keybindings {{ item.key }} "['{{ item.value }}']"
+  vars:
+    MOD_KEY: "<Super>"
+  with_items:
+    - key: toggle-tiled-left
+      value: "<Shift>{{ MOD_KEY }}h"
+    - key: toggle-tiled-right
+      value: "<Shift>{{ MOD_KEY }}l"
 
 - name: set screensaver keybing
   command: >

@@ -28,6 +28,7 @@ base:
     - ulauncher
     - kanshi # display config
     - lxpolkit
+    - alacritty
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
