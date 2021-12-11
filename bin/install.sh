@@ -11,7 +11,7 @@ echo "** Installing core packages **"
 rpm-ostree install --idempotent --allow-inactive --apply-live ansible neovim zsh flatpak-builder git python3 python3-psutil stow tmux fzf wl-clipboard ripgrep git-crypt alacritty
 
 echo "** Installing sway packages **"
-rpm-ostree install --idempotent --allow-inactive --apply-live light sway swaylock waybar ulauncher mako kanshi lxpolkit
+rpm-ostree install --idempotent --allow-inactive --apply-live light sway swaylock waybar ulauncher mako kanshi lxpolkit blueberry pavucontrol playerctl libappindicator-gtk3
 
 echo "** Removing firefox from base image **"
 rpm-ostree override remove firefox 2> /dev/null

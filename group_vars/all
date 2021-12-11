@@ -20,6 +20,7 @@ base:
     - tmux
     - fzf
     - wl-clipboard
+    # sway stuff
     - light
     - sway
     - swaylock
@@ -29,6 +30,10 @@ base:
     - kanshi # display config
     - lxpolkit
     - alacritty
+    - blueberry
+    - pavucontrol
+    - playerctl
+    - libappindicator-gtk3
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
