@@ -34,6 +34,7 @@ base:
     - pavucontrol
     - playerctl
     - libappindicator-gtk3
+    - xdg-desktop-portal-wlr
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -81,6 +82,7 @@ base:
     - name: com.uploadedlobster.peek
     - name: com.visualstudio.code
     - name: io.dbeaver.DBeaverCommunity
+    - name: io.mpv.Mpv
     - name: md.obsidian.Obsidian
     - name: org.audacityteam.Audacity
     - name: org.flameshot.Flameshot
