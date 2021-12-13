@@ -78,6 +78,7 @@ base:
     - name: com.discordapp.Discord
     - name: com.github.junrrein.PDFSlicer
     - name: com.github.tchx84.Flatseal
+    - name: com.github.xournalpp.xournalpp
     - name: com.spotify.Client
     - name: com.uploadedlobster.peek
     - name: com.visualstudio.code
