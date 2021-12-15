@@ -35,6 +35,8 @@ base:
     - playerctl
     - libappindicator-gtk3
     - xdg-desktop-portal-wlr
+    - pulseaudio-utils
+    - network-manager-applet
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
