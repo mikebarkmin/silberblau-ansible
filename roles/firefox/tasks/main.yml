@@ -1,11 +1,7 @@
 ---
-# - name: Clone firefox gnome theme
-#   git:
-#     repo: https://github.com/rafaelmardojai/firefox-gnome-theme
-#     dest: "{{ dotfiles_user_home }}/Sources/firefox-gnome-theme"
-#     clone: yes
-#     update: yes
-#
-# - name: Install firefox gnome theme
-#   shell:
-#     cmd: "cd {{ dotfiles_user_home }}/Sources/firefox-gnome-theme && ./scripts/auto-install.sh -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox"
+- name: Configure profiles
+  include_tasks: configure_profile.yml
+  with_dict: "{{ firefox_profiles }}"
+  loop_control:
+    loop_var: firefox_profile
+  tags: firefox

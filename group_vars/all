@@ -4,6 +4,7 @@ dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
 ansible_home: "{{ dotfiles_user_home }}/Sources/silberblau"
 firefox_home:  "{{ dotfiles_user_home}}/.var/app/org.mozilla.firefox/.mozilla/firefox"
+firefox_cmd: "flatpak run org.mozilla.firefox"
 
 gnome_wallpaper_lock_screen: "wallpaper.jpg"
 gnome_wallpaper_desktop_screen: "wallpaper.jpg"
@@ -189,6 +190,10 @@ firefox_profiles:
       - i-dont-care-about-cookies
       - duckduckgo-for-firefox
       - darkreader
+      - adsum-notabs
+      - vim-vixen
+    styles:
+      - "#TabsToolbar { visibility: collapse !important; }"
     preferences:
       signon.rememberSignons: false
       privacy.donottrackheader.enabled: true
@@ -201,3 +206,4 @@ firefox_profiles:
       browser.newtabpage.enabled: false
       browser.newtabpage.activity-stream.feeds.topsites: false
       browser.newtabpage.activity-stream.feeds.section.topstories: false
+      toolkit.legacyUserProfileCustomizations.stylesheets: true

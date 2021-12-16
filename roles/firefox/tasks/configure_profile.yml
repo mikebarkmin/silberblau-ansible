@@ -1,0 +1,47 @@
+---
+- name: Create profiles
+  firefox_profile:
+    name: "{{ firefox_profile.key }}"
+    path: "{{ firefox_home }}"
+    cmd: "{{ firefox_cmd }}"
+    state: present
+  register: create_profile
+  tags: firefox
+
+- name: Install extensions
+  firefox_addon:
+    name: "{{ extension }}"
+    profile_path: "{{ create_profile.profile_path }}"
+    state: present
+  with_items:
+    - "{{ firefox_profile.value.extensions }}"
+  loop_control:
+    loop_var: extension
+  tags: firefox
+
+- name: Install user prefs
+  lineinfile:
+    path: "{{ create_profile.profile_path }}/prefs.js"
+    create: true
+    regexp: '^user_pref\("{{ pref.key }}",\s*\S+?\);\s*$'
+    line: 'user_pref("{{ pref.key }}", {{ (''"%s"'' | format(pref.value)) if pref.value is string else (pref.value | lower) }});'
+  with_items: "{{ firefox_profile.value.preferences | default({}) | dict2items }}"
+  loop_control:
+    loop_var: pref
+  tags: firefox
+
+- name: Ensure chrome directorx
+  file:
+    path: "{{ create_profile.profile_path }}/chrome"
+    state: directory
+
+- name: Install user styles
+  lineinfile:
+    path: "{{ create_profile.profile_path }}/chrome/userChrome.css"
+    create: true
+    line: "{{ style }}"
+    insertbefore: BOF
+  with_items: "{{ firefox_profile.value.styles | default([]) }}"
+  loop_control:
+    loop_var: style
+  tags: firefox

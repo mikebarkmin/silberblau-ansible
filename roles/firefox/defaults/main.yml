@@ -1,0 +1,9 @@
+---
+firefox_home: ~/.mozilla/firefox
+
+firefox: {}
+#  - name: alice
+#    extensions:
+#      - random-agent-spoofer
+#  - name: bob
+#    extensions: []
