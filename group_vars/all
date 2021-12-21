@@ -180,6 +180,13 @@ base:
       key: "xkb-options"
       value: "['caps:escape']"
 
+fonts:
+  - "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip"
+  - "https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip"
+  - "https://use.fontawesome.com/releases/v6.0.0-beta3/fontawesome-free-6.0.0-beta3-desktop.zip"
+  - "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
+  - "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip"
+
 firefox_profiles:
   default-release:
     extensions:

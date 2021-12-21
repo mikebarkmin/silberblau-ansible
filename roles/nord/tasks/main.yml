@@ -1,0 +1,38 @@
+- name: Makes sure themes directory exists
+  file:
+    path: "{{dotfiles_user_home}}/.local/share/themes"
+    recurse: yes
+    state: directory
+
+- name: Install nord theme
+  unarchive:
+    src: "{{ item }}"
+    dest: "{{ dotfiles_user_home }}/.local/share/themes"
+    remote_src: yes
+  with_items:
+    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic.tar.xz"
+    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-Polar.tar.xz"
+    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-darker.tar.xz"
+
+- name: Makes sure icons directory exists
+  file:
+    path: "{{dotfiles_user_home}}/.local/share/icons"
+    recurse: yes
+    state: directory
+
+- name: Install nord icons
+  unarchive:
+    src: "{{ item }}"
+    dest: "{{ dotfiles_user_home }}/.local/share/icons"
+    remote_src: yes
+  with_items:
+    - "https://github.com/zayronxio/Zafiro-icons/releases/download/1.2/Zafiro-Icons-Dark.tar.xz"
+    - "https://github.com/zayronxio/Zafiro-icons/releases/download/1.2/Zafiro-Icons-Light.tar.xz"
+
+- name: Install stylepak
+  get_url:
+    url: "https://raw.githubusercontent.com/refi64/stylepak/master/stylepak"
+    dest: "{{ dotfiles_user_home }}/.local/bin/stylepak"
+
+- name: Install nord for flatpaks
+  script: "{{ dotfiles_user_home }}/.local/bin/stylepak install-user"

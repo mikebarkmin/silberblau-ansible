@@ -17,7 +17,7 @@ echo "** Installing sway packages **"
 rpm-ostree install --idempotent --allow-inactive --apply-live light sway swaylock waybar ulauncher mako kanshi lxpolkit blueberry pavucontrol playerctl libappindicator-gtk3 xdg-desktop-portal-wlr wf-recorder pulseaudio-utils network-manager-applet
 
 echo "** Install V4l2loopback"
-  rpm-ostree install akmod-v4l2loopback
+rpm-ostree install akmod-v4l2loopback
 
 echo "** Removing firefox from base image **"
 rpm-ostree override remove firefox 2> /dev/null

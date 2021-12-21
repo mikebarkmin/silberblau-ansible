@@ -1,13 +1,16 @@
 - name: Makes sure fonts directory exists
-  file: 
+  file:
     path: "{{dotfiles_user_home}}/.local/share/fonts"
     recurse: yes
     state: directory
 
-- name: Move fonts
+- name: Install fonts
   unarchive:
     src: "{{ item }}"
     dest: "{{ dotfiles_user_home }}/.local/share/fonts"
-  with_items:
-    - "Fira_Code_v5.2.zip"
-    - "ubuntu-font-family-0.83.zip"
+    remote_src: yes
+  with_items: "{{ fonts }}"
+
+- name: 'rebuild fonts cache'
+  become: yes
+  shell: 'fc-cache -v -f'
