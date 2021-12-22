@@ -25,6 +25,7 @@ system_flatpaks: []
 
 flatpaks:
   - name: com.nextcloud.desktopclient.nextcloud
+  - name: flathub com.valvesoftware.Steam
 
 gnome_extension_ids: []
 
