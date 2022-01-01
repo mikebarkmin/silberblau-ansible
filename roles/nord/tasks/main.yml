@@ -10,9 +10,9 @@
     dest: "{{ dotfiles_user_home }}/.local/share/themes"
     remote_src: yes
   with_items:
-    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic.tar.xz"
-    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-Polar.tar.xz"
-    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-darker.tar.xz"
+    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-v40.tar.xz"
+    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-Polar-v40.tar.xz"
+    - "https://github.com/EliverLara/Nordic/releases/download/v2.1.0/Nordic-darker-v40.tar.xz"
 
 - name: Makes sure icons directory exists
   file:
@@ -35,4 +35,8 @@
     dest: "{{ dotfiles_user_home }}/.local/bin/stylepak"
 
 - name: Install nord for flatpaks
-  script: "{{ dotfiles_user_home }}/.local/bin/stylepak install-user"
+  script: "{{ dotfiles_user_home }}/.local/bin/stylepak install-user {{ item }}"
+  with_items:
+    - Nordic-darker-v40
+    - Nordic-v40
+    - Nordic-Polar-v40

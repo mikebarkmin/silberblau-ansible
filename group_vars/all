@@ -21,23 +21,9 @@ base:
     - tmux
     - fzf
     - wl-clipboard
-    # sway stuff
-    - light
-    - sway
-    - swaylock
-    - waybar
-    - mako # notifications
     - ulauncher
-    - kanshi # display config
-    - lxpolkit
-    - alacritty
-    - blueberry
     - pavucontrol
-    - playerctl
-    - libappindicator-gtk3
-    - xdg-desktop-portal-wlr
     - pulseaudio-utils
-    - network-manager-applet
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -82,12 +68,14 @@ base:
     - name: com.github.junrrein.PDFSlicer
     - name: com.github.tchx84.Flatseal
     - name: com.github.xournalpp.xournalpp
+    - name: com.obsproject.Studio
     - name: com.spotify.Client
     - name: com.uploadedlobster.peek
     - name: com.visualstudio.code
     - name: io.dbeaver.DBeaverCommunity
     - name: io.mpv.Mpv
     - name: md.obsidian.Obsidian
+    - name: org.ardour.Ardour
     - name: org.audacityteam.Audacity
     - name: org.flameshot.Flameshot
     - name: org.gaphor.Gaphor
@@ -197,10 +185,10 @@ firefox_profiles:
       - i-dont-care-about-cookies
       - duckduckgo-for-firefox
       - darkreader
-      - adsum-notabs
+      # - adsum-notabs
       - vim-vixen
     styles:
-      - "#TabsToolbar { visibility: collapse !important; }"
+      # - "#TabsToolbar { visibility: collapse !important; }"
     preferences:
       signon.rememberSignons: false
       privacy.donottrackheader.enabled: true

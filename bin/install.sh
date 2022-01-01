@@ -11,10 +11,12 @@ echo "** Enable RPM Fusion **"
 rpm-ostree install --idempotent --apply-live https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 echo "** Installing core packages **"
-rpm-ostree install --idempotent --allow-inactive --apply-live ansible neovim zsh flatpak-builder git python3 python3-psutil stow tmux fzf wl-clipboard ripgrep git-crypt alacritty
+rpm-ostree install --idempotent --allow-inactive --apply-live ansible neovim zsh flatpak-builder git python3 python3-psutil stow tmux fzf wl-clipboard ripgrep git-crypt pavucontrol pulseaudio-utils ulauncher
 
-echo "** Installing sway packages **"
-rpm-ostree install --idempotent --allow-inactive --apply-live light sway swaylock waybar ulauncher mako kanshi lxpolkit blueberry pavucontrol playerctl libappindicator-gtk3 xdg-desktop-portal-wlr wf-recorder pulseaudio-utils network-manager-applet
+if [[ -n "$SWAY" ]]; then
+  echo "** Installing sway packages **"
+  rpm-ostree install --idempotent --allow-inactive --apply-live light sway swaylock waybar mako kanshi lxpolkit blueberry playerctl libappindicator-gtk3 xdg-desktop-portal-wlr wf-recorder network-manager-applet alacritty
+fi
 
 echo "** Install V4l2loopback"
 rpm-ostree install akmod-v4l2loopback

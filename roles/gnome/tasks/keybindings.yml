@@ -17,7 +17,7 @@
   with_items:
     - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name", value: "'terminal'" }
     - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding", value: "'<Super>Return'" }
-    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command", value: "'alacritty'" }
+    - { key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command", value: "'gnome-terminal'" }
 
 - name: set ulauncher keybinding
   dconf:

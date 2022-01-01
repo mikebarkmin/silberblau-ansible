@@ -1,0 +1,13 @@
+- name: copy limits
+  become: yes
+  copy:
+    src: limits.conf
+    dest: /etc/security/limits.d/audio.conf
+    backup: yes
+
+- name: add user to group
+  become: yes
+  lineinfile:
+    path: /etc/group
+    regexp: "^audio:"
+    line: "audio:x:63:{{ ansible_user_id }}"
