@@ -211,3 +211,4 @@ firefox_profiles:
       browser.newtabpage.activity-stream.feeds.topsites: false
       browser.newtabpage.activity-stream.feeds.section.topstories: false
       toolkit.legacyUserProfileCustomizations.stylesheets: true
+      media.gpu-process-decoder: true
