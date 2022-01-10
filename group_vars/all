@@ -6,8 +6,8 @@ ansible_home: "{{ dotfiles_user_home }}/Sources/silberblau"
 firefox_home:  "{{ dotfiles_user_home}}/.var/app/org.mozilla.firefox/.mozilla/firefox"
 firefox_cmd: "flatpak run org.mozilla.firefox"
 
-gnome_wallpaper_lock_screen: "wallpaper.jpg"
-gnome_wallpaper_desktop_screen: "wallpaper.jpg"
+wallpaper_lock_screen: "while-unterricht.png"
+wallpaper_desktop_screen: "while-unterricht.png"
 
 base:
   system_packages:
@@ -24,6 +24,7 @@ base:
     - ulauncher
     - pavucontrol
     - pulseaudio-utils
+    - openssl
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -103,6 +104,7 @@ base:
     - name: org.gnome.design.Contrast
     - name: org.gnome.gedit
     - name: org.inkscape.Inkscape
+    - name: org.onlyoffice.desktopeditors
     - name: org.libreoffice.LibreOffice
     - name: org.mozilla.Thunderbird
     - name: org.mozilla.firefox
@@ -112,16 +114,17 @@ base:
     - 517 # Caffeine
     - 1401 # Bluetooth Quick Connect
     - 615 # Appindicator
-    - 1092 # Audio Switcher
+    - 751 # Audio Switcher
     - 1162 # emoji picker
+    - 1319 # gsconnect
 
   gnome_settings:
     - schema: "org.gnome.desktop.background"
       key: "picture-uri"
-      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_desktop_screen }}"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper_desktop_screen }}"
     - schema: "org.gnome.desktop.screensaver"
       key: "picture-uri"
-      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ gnome_wallpaper_lock_screen }}"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper_lock_screen }}"
     - schema: "org.gnome.shell"
       key: "disable-user-extensions"
       value: "false"
@@ -178,11 +181,11 @@ base:
       value: "['caps:escape']"
 
 fonts:
-  - "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip"
   - "https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip"
   - "https://use.fontawesome.com/releases/v6.0.0-beta3/fontawesome-free-6.0.0-beta3-desktop.zip"
   - "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
   - "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip"
+  - "https://cloud.barkmin.eu/s/EJ2T8QMd8FgZypD/download"
 
 firefox_profiles:
   default-release:

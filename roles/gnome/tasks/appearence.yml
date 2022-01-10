@@ -6,8 +6,10 @@
 
 - name: Deploy wallpapers
   copy:
-    src: "wallpaper.jpg"
-    dest: "{{ dotfiles_user_home }}/Wallpapers/wallpaper.jpg"
+    src: "{{ item }}"
+    dest: "{{ dotfiles_user_home }}/Wallpapers/"
+  with_fileglob:
+    - "Wallpapers/*"
 
 - name: Set terminal profiles
   shell: >

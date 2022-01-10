@@ -19,12 +19,13 @@ git_repos:
     worktrees:
       - main
 
-system_packages: []
+system_packages:
+  - nextcloud-client
+  - nextcloud-client-nautilus
 
 system_flatpaks: []
 
 flatpaks:
-  - name: com.nextcloud.desktopclient.nextcloud
   - name: com.valvesoftware.Steam
 
 gnome_extension_ids: []
