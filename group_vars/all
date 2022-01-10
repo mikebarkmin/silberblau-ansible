@@ -79,6 +79,7 @@ base:
     - name: io.dbeaver.DBeaverCommunity
     - name: io.mpv.Mpv
     - name: md.obsidian.Obsidian
+    - name: net.christianbeier.Gromit-MPX
     - name: org.ardour.Ardour
     - name: org.audacityteam.Audacity
     - name: org.freedesktop.LinuxAudio.Plugins.swh/x86_64/21.08
