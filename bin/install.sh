@@ -17,6 +17,10 @@ if [[ "$PROFILE" == "personal" ]]; then
   rpm-ostree install nextcloud-client nextcloud-client-nautilus
 fi
 
+if [[ "$PROFILE" == "work" ]]; then
+  rpm-ostree install owncloud-client owncloud-client-nautilus
+fi
+
 if [[ -n "$SWAY" ]]; then
   echo "** Installing sway packages **"
   rpm-ostree install --idempotent --allow-inactive --apply-live light sway swaylock waybar mako kanshi lxpolkit blueberry playerctl libappindicator-gtk3 xdg-desktop-portal-wlr wf-recorder network-manager-applet alacritty

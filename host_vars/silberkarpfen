@@ -1,6 +1,9 @@
 ---
 dotfiles_context: personal
 
+wallpaper_lock_screen: "while-unterricht.png"
+wallpaper_desktop_screen: "while-unterricht.png"
+
 git_global_configs:
   - name: user.email
     value: "mike@barkmin.eu"
@@ -22,6 +25,9 @@ git_repos:
 system_packages:
   - nextcloud-client
   - nextcloud-client-nautilus
+
+wallpaper_lock_screen: "while-unterricht.png"
+wallpaper_desktop_screen: "while-unterricht.png"
 
 system_flatpaks: []
 
