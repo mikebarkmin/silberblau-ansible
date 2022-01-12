@@ -33,6 +33,7 @@ flatpaks:
   - name: org.bluej.BlueJ
   - name: org.gnome.Evolution
   - name: org.greenfoot.Greenfoot
+  - name: org.parlatype.Parlatype
   - name: org.processing.processingide
   - name: org.thonny.Thonny
   - name: org.zotero.Zotero

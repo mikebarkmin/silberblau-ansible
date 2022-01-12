@@ -104,6 +104,7 @@ base:
     - name: org.gnome.World.PikaBackup
     - name: org.gnome.design.Contrast
     - name: org.gnome.gedit
+    - name: org.gnome.Totem
     - name: org.inkscape.Inkscape
     - name: org.onlyoffice.desktopeditors
     - name: org.libreoffice.LibreOffice
