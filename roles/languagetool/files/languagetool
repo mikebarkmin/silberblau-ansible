@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+export JAVA_HOME=~/Applications/languagetool/java
+cd ~/Applications/languagetool/java
+
+${JAVA_HOME}/bin/java -cp languagetool-server.jar \
+    org.languagetool.server.HTTPServer --port 8081 --allow-origin "*"

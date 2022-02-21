@@ -1,0 +1,46 @@
+- name: Create Directory
+  file:
+    src: "{{ dotfiles_user_home }}/Applications/languagetool"
+
+- name: Download LanguageTool
+  register: languagetool
+  ignore_errors: True
+  get_url:
+    url: https://languagetool.org/download/LanguageTool-5.6.zip
+    dest: "{{ dotfiles_user_home }}/Downloads/languagetool.zip"
+
+- name: Extract LanguageTool
+  when: languagetool.changed
+  unarchive:
+    src: "{{ dotfiles_user_home }}/Downloads/languagetool.zip"
+    dest: "{{ dotfiles_user_home }}/Applications/languagetool"
+
+- name: Download java
+  register: java
+  ignore_errors: True
+  get_url:
+    url: https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
+    dest: "{{ dotfiles_user_home }}/Downloads/languagetool-java.tar.gz"
+
+- name: Extract java
+  when: java.changed
+  unarchive:
+    src: "{{ dotfiles_user_home }}/Downloads/languagetool-java.tar.gz"
+    dest: "{{ dotfiles_user_home }}/Applications/languagetool/java"
+
+- name: install LanguageTool start script
+  copy:
+    src: files/ansible-laptops.timer
+    dest: /etc/systemd/system/ansible-laptops.timer
+
+- name: install ansible-laptops timer systemd
+  copy:
+    src: files/ansible-laptops.timer
+    dest: /etc/systemd/system/ansible-laptops.timer
+
+- name: start ansible-laptops timer systemd
+  systemd:
+    daemon_reload: yes
+    name: ansible-laptops.timer
+    enabled: yes
+    state: started
