@@ -82,13 +82,13 @@ base:
     - name: net.christianbeier.Gromit-MPX
     - name: org.ardour.Ardour
     - name: org.audacityteam.Audacity
-    - name: org.freedesktop.LinuxAudio.Plugins.swh/x86_64/21.08
-    - name: org.freedesktop.LinuxAudio.Plugins.TAP/x86_64/21.08
-    - name: org.freedesktop.LinuxAudio.Plugins.LSP/x86_64/21.08
-    - name: org.freedesktop.LinuxAudio.Plugins.DragonflyReverb/x86_64/21.08
-    - name: org.freedesktop.LinuxAudio.Plugins.Calf/x86_64/21.08
-    - name: org.freedesktop.LinuxAudio.Plugins.x42Plugins/x86_64/21.08
     - name: org.flameshot.Flameshot
+    - name: org.freedesktop.LinuxAudio.Plugins.Calf/x86_64/21.08
+    - name: org.freedesktop.LinuxAudio.Plugins.DragonflyReverb/x86_64/21.08
+    - name: org.freedesktop.LinuxAudio.Plugins.LSP/x86_64/21.08
+    - name: org.freedesktop.LinuxAudio.Plugins.TAP/x86_64/21.08
+    - name: org.freedesktop.LinuxAudio.Plugins.swh/x86_64/21.08
+    - name: org.freedesktop.LinuxAudio.Plugins.x42Plugins/x86_64/21.08
     - name: org.gaphor.Gaphor
     - name: org.gimp.GIMP
     - name: org.gnome.Boxes
@@ -101,16 +101,17 @@ base:
     - name: org.gnome.FileRoller
     - name: org.gnome.Screenshot
     - name: org.gnome.SoundRecorder
+    - name: org.gnome.Totem
     - name: org.gnome.World.PikaBackup
     - name: org.gnome.design.Contrast
     - name: org.gnome.gedit
-    - name: org.gnome.Totem
     - name: org.inkscape.Inkscape
-    - name: org.onlyoffice.desktopeditors
     - name: org.libreoffice.LibreOffice
     - name: org.mozilla.Thunderbird
     - name: org.mozilla.firefox
+    - name: org.onlyoffice.desktopeditors
     - name: rest.insomnia.Insomnia
+    - name: social.whalebird.WhalebirdDesktop
 
   gnome_extension_ids:
     - 517 # Caffeine
@@ -188,6 +189,7 @@ fonts:
   - "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
   - "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/UbuntuMono.zip"
   - "https://cloud.barkmin.eu/s/EJ2T8QMd8FgZypD/download"
+  - "https://www.fontsquirrel.com/fonts/download/computer-modern"
 
 firefox_profiles:
   default-release:
