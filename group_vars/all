@@ -72,6 +72,7 @@ base:
     - name: com.github.junrrein.PDFSlicer
     - name: com.github.tchx84.Flatseal
     - name: com.github.xournalpp.xournalpp
+    - name: com.jgraph.drawio.desktop
     - name: com.obsproject.Studio
     - name: com.spotify.Client
     - name: com.uploadedlobster.peek
