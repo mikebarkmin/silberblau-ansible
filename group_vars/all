@@ -100,6 +100,7 @@ base:
     - name: org.gnome.Evince
     - name: org.gnome.Extensions
     - name: org.gnome.FileRoller
+    - name: org.gnome.Firmware
     - name: org.gnome.Screenshot
     - name: org.gnome.SoundRecorder
     - name: org.gnome.Totem
