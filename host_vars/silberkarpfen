@@ -25,6 +25,7 @@ git_repos:
 system_packages:
   - nextcloud-client
   - nextcloud-client-nautilus
+  - GoldenCheetah
 
 wallpaper_lock_screen: "while-unterricht.png"
 wallpaper_desktop_screen: "while-unterricht.png"

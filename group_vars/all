@@ -25,6 +25,8 @@ base:
     - pavucontrol
     - pulseaudio-utils
     - openssl
+    - virtio-win
+    - gnome-boxes
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
@@ -93,7 +95,6 @@ base:
     - name: org.freedesktop.LinuxAudio.Plugins.x42Plugins/x86_64/21.08
     - name: org.gaphor.Gaphor
     - name: org.gimp.GIMP
-    - name: org.gnome.Boxes
     - name: org.gnome.Cheese
     - name: org.gnome.Connections
     - name: org.gnome.Contacts
