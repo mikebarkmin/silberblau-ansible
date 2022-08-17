@@ -1,0 +1,17 @@
+- name: set all_group
+  set_fact:
+    all_groups: "{{ user_groups + base['user_groups'] }}"
+
+- name: Ensure groups are present
+  become: yes
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ all_groups }}"
+
+- name: Add user to groups
+  become: yes
+  user:
+    name: "{{ user }}"
+    group: "{{ user }}"
+    groups: "{{ all_groups }}"

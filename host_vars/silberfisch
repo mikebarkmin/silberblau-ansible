@@ -18,6 +18,8 @@ git_global_configs:
 
 git_repos: []
 
+user_groups: []
+
 system_packages:
   - owncloud-client
   - owncloud-client-nautilus

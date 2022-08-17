@@ -8,6 +8,7 @@
     - fonts
     - appimage
     - gnome
+    - groups
     #- backup
     - dotfiles
     - toolbox

@@ -10,6 +10,14 @@ wallpaper_lock_screen: "while-unterricht.png"
 wallpaper_desktop_screen: "while-unterricht.png"
 
 base:
+  user_groups:
+    - dialout
+    - adbusers
+    - libvirt
+    - kvm
+    - "{{ user }}"
+    - wheel
+
   system_packages:
     - ansible
     - neovim
@@ -27,6 +35,7 @@ base:
     - openssl
     - virtio-win
     - gnome-boxes
+    - virt-manager
 
   git_repos:
     - repo: git@github.com:openpatch/coru.git
