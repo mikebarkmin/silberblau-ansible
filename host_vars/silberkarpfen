@@ -32,6 +32,7 @@ system_flatpaks: []
 
 flatpaks:
   - name: com.valvesoftware.Steam
+  - name: org.gnucash.GnuCash
 
 gnome_extension_ids: []
 

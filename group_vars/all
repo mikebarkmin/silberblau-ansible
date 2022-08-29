@@ -80,19 +80,19 @@ base:
   flatpaks:
     - name: com.belmoussaoui.Authenticator
     - name: com.discordapp.Discord
+    - name: com.github.flxzt.rnote
     - name: com.github.junrrein.PDFSlicer
     - name: com.github.tchx84.Flatseal
-    - name: com.github.flxzt.rnote
     - name: com.github.xournalpp.xournalpp
     - name: com.jgraph.drawio.desktop
     - name: com.obsproject.Studio
     - name: com.spotify.Client
     - name: com.uploadedlobster.peek
     - name: com.visualstudio.code
+    - name: in.srev.guiscrcpy
     - name: io.dbeaver.DBeaverCommunity
     - name: io.mpv.Mpv
     - name: md.obsidian.Obsidian
-    - name: net.christianbeier.Gromit-MPX
     - name: org.ardour.Ardour
     - name: org.audacityteam.Audacity
     - name: org.flameshot.Flameshot
@@ -120,7 +120,6 @@ base:
     - name: org.gnome.gedit
     - name: org.inkscape.Inkscape
     - name: org.libreoffice.LibreOffice
-    - name: org.mozilla.Thunderbird
     - name: org.mozilla.firefox
     - name: org.onlyoffice.desktopeditors
     - name: rest.insomnia.Insomnia
@@ -133,6 +132,7 @@ base:
     - 751 # Audio Switcher
     - 1162 # emoji picker
     - 1319 # gsconnect
+    - 2236 # night theme switcher
 
   gnome_settings:
     - schema: "org.gnome.desktop.background"
