@@ -1,9 +1,6 @@
 ---
 dotfiles_context: work
 
-wallpaper_lock_screen: "wallpaper.jpg"
-wallpaper_desktop_screen: "wallpaper.jpg"
-
 git_global_configs:
   - name: user.email
     value: "mike.barkmin@uni-due.de"

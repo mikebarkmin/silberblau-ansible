@@ -1,8 +1,9 @@
 ---
 dotfiles_context: personal
 
-wallpaper_lock_screen: "while-unterricht.png"
-wallpaper_desktop_screen: "while-unterricht.png"
+wallpaper:
+  dark: "openpatch-night.png"
+  light: "openpatch-day.png"
 
 git_global_configs:
   - name: user.email

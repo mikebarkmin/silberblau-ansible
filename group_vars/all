@@ -6,8 +6,9 @@ ansible_home: "{{ dotfiles_user_home }}/Sources/silberblau"
 firefox_home:  "{{ dotfiles_user_home}}/.var/app/org.mozilla.firefox/.mozilla/firefox"
 firefox_cmd: "flatpak run org.mozilla.firefox"
 
-wallpaper_lock_screen: "while-unterricht.png"
-wallpaper_desktop_screen: "while-unterricht.png"
+wallpaper:
+  dark: "f36-01-night.png"
+  light: "f36-02-day.png"
 
 base:
   user_groups:
@@ -137,10 +138,13 @@ base:
   gnome_settings:
     - schema: "org.gnome.desktop.background"
       key: "picture-uri"
-      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper_desktop_screen }}"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper.light }}"
+    - schema: "org.gnome.desktop.background"
+      key: "picture-uri-dark"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper.dark }}"
     - schema: "org.gnome.desktop.screensaver"
       key: "picture-uri"
-      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper_lock_screen }}"
+      value: "file://{{ dotfiles_user_home }}/Wallpapers/{{ wallpaper.dark }}"
     - schema: "org.gnome.shell"
       key: "disable-user-extensions"
       value: "false"

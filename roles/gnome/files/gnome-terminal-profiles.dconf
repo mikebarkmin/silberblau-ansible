@@ -4,7 +4,7 @@ list=['043582b8-e1a5-4824-996f-b6f13792f297','a279c4f2-067d-420b-937e-f56064c147
 
 [:043582b8-e1a5-4824-996f-b6f13792f297]
 background-color='#1a1b26'
-background-transparency-percent=2
+background-transparency-percent=6
 bold-color='#D8DEE9'
 bold-color-same-as-fg=true
 cursor-background-color='#3760bf'
@@ -26,7 +26,7 @@ visible-name='Tokyonight Auto'
 
 [:a279c4f2-067d-420b-937e-f56064c1472a]
 background-color='#1a1b26'
-background-transparency-percent=2
+background-transparency-percent=6
 bold-color='#D8DEE9'
 bold-color-same-as-fg=true
 cursor-background-color='#3760bf'
@@ -48,7 +48,7 @@ visible-name='Tokyonight Night'
 
 [:533a5de9-1850-4150-b1db-7ef2f2aad8eb]
 background-color='#e1e2e7'
-background-transparency-percent=2
+background-transparency-percent=6
 bold-color='#D8DEE9'
 bold-color-same-as-fg=true
 cursor-background-color='#3760bf'
