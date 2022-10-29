@@ -96,6 +96,7 @@ base:
     - name: md.obsidian.Obsidian
     - name: org.ardour.Ardour
     - name: org.audacityteam.Audacity
+    - name: org.cryptomator.Cryptomator
     - name: org.flameshot.Flameshot
     - name: org.freedesktop.LinuxAudio.Plugins.Calf/x86_64/21.08
     - name: org.freedesktop.LinuxAudio.Plugins.DragonflyReverb/x86_64/21.08
@@ -113,6 +114,8 @@ base:
     - name: org.gnome.Extensions
     - name: org.gnome.FileRoller
     - name: org.gnome.Firmware
+    - name: org.gnome.Fractal
+    - name: org.gnome.Geary
     - name: org.gnome.Screenshot
     - name: org.gnome.SoundRecorder
     - name: org.gnome.Totem
@@ -124,7 +127,6 @@ base:
     - name: org.mozilla.firefox
     - name: org.onlyoffice.desktopeditors
     - name: rest.insomnia.Insomnia
-    - name: social.whalebird.WhalebirdDesktop
 
   gnome_extension_ids:
     - 517 # Caffeine
